@@ -42,11 +42,16 @@ Verify it against `git status` and `git log` before trusting it.
 - `test_sources.py` 每次运行泄漏一行 `sources`（既有）
 - 开发库里有一批遗留匿名 `clients`（本会话的探针、审查与走查留下的），没有删
 
-## 下一步（M4）
+## 下一步（M4）——草案已写好，等确认
 
-按 `note/product/roadmap.md` 第 1 项开新的 OpenSpec change：会话、消息、提案（agent 写操作待确认）。
-M3 留下的接口在这里要用到：`document_reviews` 现在只由 CLI 写，M4 的 agent 送审要接上
-（`openspec/specs/document-review/spec.md` 与归档的 design.md D10 记了 `run_id` 推迟到 M4 加）。
+**M4 的 OpenSpec change 已经写好并推在分支 `dsh/stage-2-m4-conversations` 上，等用户确认后才写代码**
+（change id `stage-2-m4-conversations-and-proposals`；15 条需求、31 个场景、50 个任务）。
+
+- 位置：`openspec/changes/stage-2-m4-conversations-and-proposals/`
+- 要点：4 张 agent 表 + 补上 M3 欠的 `document_reviews.run_id`；顾问消息必须标明"人写的"还是"模型写的"
+  （M4 没有模型，所以全部是人工录入）；提案的**创建**走维护者命令、**确认**走 HTTP；基于旧状态的提案会过期。
+- **确认前需要用户回答 design.md 的 5 个 Open Questions**，尤其第 1 条：申请人能否自己发消息。
+- 确认后按 tasks.md 执行：第 1–6 组后端 PR、第 7 组前端 PR、第 8 组收尾归档。
 
 ## 怎么跑
 

@@ -6,7 +6,7 @@
 
 | 顺序 | 条目 | 状态 | OpenSpec change |
 | --- | --- | --- | --- |
-| 1 | 阶段二 M4：会话、消息、提案（agent 写操作待确认） | 未开始 | — |
+| 1 | 阶段二 M4：会话、消息、提案（agent 写操作待确认） | change 已提出、待用户确认（分支 `dsh/stage-2-m4-conversations`） | `stage-2-m4-conversations-and-proposals` |
 | 2 | 数据标注：把项目数据从占位数据换成核验过的数据 | 未开始 | — |
 | 3 | 接入模型，让顾问真正能对话 | 未开始 | — |
 
