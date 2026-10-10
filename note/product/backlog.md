@@ -16,3 +16,4 @@
 | 阶段二 M4：会话、消息、提案。规格在分支 `dsh/stage-2-m4-conversations`（`openspec/changes/stage-2-m4-conversations-and-proposals/`），未写代码 | 2026-10-10 重新规划 | 等接入对话顾问时按新范围重写，见 `note/decisions.md` |
 | 加国家：英国 G5、香港 | 对标指南者 | 先找各自的官方登记数据源（澳洲用 CRICOS） |
 | 案例库 | 对标指南者 | 没有真实录取数据，不做；红线：不给录取概率 |
+| **上线前必做：海外院校的入选依据换掉 QS 排名**（条款限非商业用途）。备选：英国 HESA、澳洲教育部、香港教资会等官方的中国 / 国际学生在读人数 | 2026-10-10 决定 | 见 `note/decisions.md` |
