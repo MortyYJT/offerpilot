@@ -1,15 +1,31 @@
 # OfferPilot
 
-A long-horizon planning agent for master's applications to Australian universities. The product is a
-**visual application roadmap**: open any phase and see what to prepare, when to prepare it, and which
-official page the requirement came from.
+An application-planning tool for master's degrees at Australian universities, built as the lead-capture
+and first-screening front end of an education agency run by MortyYJT. Students explore programs, check
+themselves against official requirements, and learn the application process on their own; those who
+leave contact details are handed to the agency for human service. See `note/product/vision.md`.
+
+The core surface is a **visual application roadmap**: open any phase and see what to prepare, when to
+prepare it, and which official page the requirement came from.
 
 ## Current stage status
 
-The repository provides the onboarding flow, the portfolio picker, the roadmap interface and the advisor
-chat skeleton. A FastAPI service with a PostgreSQL schema persists the applicant's profile; the
-application stage, the portfolio and the completed materials still live in `localStorage` and move to the
-server in the next batch.
+Status as of 2026-10-11. The roadmap of what comes next is `note/product/roadmap.md`.
+
+On `main`:
+
+- Onboarding flow, portfolio picker, roadmap interface and advisor chat skeleton in `web/`.
+- A FastAPI service with PostgreSQL in `api/` persists the profile, the portfolio (as application rows)
+  and roadmap task rows (stage 2, M1-M2). Only the onboarding position stays in `localStorage`.
+- Material library (M3): upload, versions, archive, send for review. Review criteria must cite an
+  official source; review verdicts are written by the maintainer CLI (`api/review_cli.py`), and the HTTP
+  API is read-only for them. Specs live in `openspec/specs/`.
+
+In progress, not on `main`:
+
+- A static clickable prototype under `/prototype` (PR #16) that fixes the feature set before the backend
+  is extended: school library, program library from CRICOS open data, background assessment,
+  comparison, application board, advisor and hand-off to a human consultant.
 
 Not implemented:
 
@@ -20,7 +36,7 @@ Not implemented:
 - Admission thresholds come from a first-pass manual seed set that mirrors `web/lib/programs.ts`. A guard
   fails the test run if the seed and that file diverge, but neither has been checked against a university
   page. This is placeholder data pending the annotation stage.
-- There is no file upload, no document review, and no review criteria.
+- No file content parsing (OCR or PDF extraction), and no automated review.
 - The backend has no authentication. A profile is scoped to an anonymous cookie, so clearing browser data
   loses access to it.
 
@@ -86,9 +102,7 @@ answer when evidence is missing, and confirmation before irreversible writes.
 ## Project records
 
 - [Contribution and commit rules](CONTRIBUTING.md)
-- [Repository instructions for agents](AGENTS.md)
-- [English verification report](docs/verification/stage-1-skeleton.md)
-- [Original Chinese verification record](note/verification/stage-1-skeleton.md)
-- [Chinese stage design record](note/superpowers/specs/2026-10-05-stage-1-mvp-design.md)
-- [Chinese stage implementation plan](note/superpowers/plans/2026-10-05-stage-1-mvp.md)
-- [Chinese learning log](note/stage-1-MVP.md)
+- [Repository instructions for agents](AGENTS.md) and [agent guidelines](docs/engineering/agent-guidelines.md)
+- [Current-truth specs](openspec/specs/) and [proposed changes](openspec/changes/)
+- [English verification reports](docs/verification/)
+- [Chinese notes index](note/README.md): vision, roadmap, decisions, handoff, design history, interview review
